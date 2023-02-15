@@ -20,33 +20,30 @@ public class Permutation {
         }
     }
 
-    public static void permute(String str,int l, int r) 
+public static void permute(String str,int Start, int end) 
     { 
-        if (l == r) 
+        if (Start == end) 
             System.out.println(str); 
         else
         { 
-            for (int i = l; i <= r; i++) 
+            for (int i = Start; i <= end; i++) 
             { 
-                str = swap(str,l,i); 
-                permute(str, l+1, r); 
-                str = swap(str,l,i); 
+                str = swap(str,Start,i); // 
+                // System.out.println(str);
+                permute(str, Start+1, end); 
+                str = swap(str,Start,i); 
             } 
         } 
     } 
-  
-    /* Swap Characters at position 
-       @param a string value @param 
-       i position 1 @param j position 2 
-       @return swapped string */
-    public static String swap(String a, 
-                       int i, int j) 
+
+public static String swap(String a,int i, int j) 
     { 
+        // System.out.print("  i  " + i + "   j  " + j + "  ");
         char temp; 
         char[] charArray = a.toCharArray(); 
-        temp = charArray[i] ; 
-        charArray[i] = charArray[j]; 
-        charArray[j] = temp; 
+        temp = charArray[i] ; // AD    = A   // 1 , 1
+        charArray[i] = charArray[j]; // = A
+        charArray[j] = temp; // = A
         return String.valueOf(charArray); 
     } 
 } 
