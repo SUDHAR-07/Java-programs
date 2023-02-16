@@ -18,5 +18,4 @@ public class cousincalculator {
             System.out.println(a.family(fam[i].split("")));
         }
     }   
-
 }
